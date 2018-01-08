@@ -86,6 +86,9 @@ class OVSvAppSecurityGroupAgent(sg_rpc.SecurityGroupAgentRpc):
     def security_groups_member_updated(self, security_groups):
         pass
 
+    def security_groups_member_updated(self, security_groups):
+        pass
+
     def sg_provider_updated(self, net_id):
         devices = []
         for device in self.firewall.ports.values():
