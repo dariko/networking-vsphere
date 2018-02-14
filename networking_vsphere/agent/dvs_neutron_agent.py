@@ -63,7 +63,7 @@ class DVSAgent(sg_rpc.SecurityGroupAgentRpcCallbackMixin,
         self.agent_state = {
             'binary': 'neutron-dvs-agent',
             'host': cfg.CONF.host,
-            'topic': n_const.L2_AGENT_TOPIC,
+            'topic': n_const.lib_constants.L2_AGENT_TOPIC,
             'configurations': {'bridge_mappings': bridge_mappings,
                                'vsphere_hostname': vsphere_hostname},
             'agent_type': 'DVS agent',
