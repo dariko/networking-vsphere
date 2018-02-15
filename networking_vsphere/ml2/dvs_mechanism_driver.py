@@ -107,6 +107,8 @@ class VMwareDVSMechanismDriver(mech_agent.SimpleAgentMechanismDriverBase):
 
     @port_belongs_to_vmware
     def bind_port(self, context):
+        if not context.segments_to_bind:
+            return
         if self._check_net_type(context.network):
             booked_port_info = self.dvs_notifier.bind_port_call(
                 context.current,
