@@ -98,6 +98,13 @@ class VMwareDVSMechanismDriver(mech_agent.SimpleAgentMechanismDriverBase):
             # need to wait for agents. Cast message
             sleep(2)
 
+    def delete_network_precommit(self, context):
+        if self._check_net_type(context):
+            self.dvs_notifier.update_network_cast(
+                context.current, context.network_segments[0], context.original)
+            # need to wait for agents. Cast message
+        sleep(2)
+
     def delete_network_postcommit(self, context):
         if self._check_net_type(context):
             self.dvs_notifier.delete_network_cast(
