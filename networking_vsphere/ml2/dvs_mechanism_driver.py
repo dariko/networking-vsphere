@@ -122,7 +122,7 @@ class VMwareDVSMechanismDriver(mech_agent.SimpleAgentMechanismDriverBase):
                 'dvs_id': booked_port_info['dvs_uuid'],
                 'pg_id': booked_port_info['pg_key']
             })
-            for segment in context.network.network_segments:
+            for segment in context.segments_to_bind:
                 context.set_binding(
                     segment[driver_api.ID],
                     self.vif_type,
